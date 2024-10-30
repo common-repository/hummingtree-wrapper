@@ -1,0 +1,465 @@
+/* === Modal Base CSS === */
+/* ====================== */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600');
+
+@mixin vertical-align($position: relative) {
+  position: $position ;
+  top: 50% ;
+  -webkit-transform: translateY(-50%) ;
+  -ms-transform: translateY(-50%) ;
+  transform: translateY(-50%) ;
+}
+
+// common variables
+$font-standard: 'Open Sans', sans-serif;
+$offwhite: rgb(238, 238, 241);
+$purple: #614e93;
+$offgrey: rgba(43, 43, 43, 0.7);
+
+/* ==== Main div ==== */
+/* ================== */
+
+// responsive sizing
+#hummingtree-wrap {
+  &.ht-parent{
+    -webkit-box-sizing: border-box ;
+            box-sizing: border-box ;
+    position: relative ;
+    max-height: 500px ;
+    width: 100% ;
+  }
+}
+#hummingtree-wrap:before {
+  content: "" ;
+	display: block ;
+  padding-top: 177.94% ;
+  max-height: 500px ;
+}
+// main
+#hummingtree-wrap{
+  #hummingtree {
+    background-repeat: no-repeat ;
+    background-origin: border-box ;
+    background-size: 100% 100% ;
+    border-radius: 3px ;
+    bottom: 0 ;
+    -webkit-box-sizing: border-box ;
+            box-sizing: border-box ;
+    color: black;
+    font-family: $font-standard ;
+    font-style: normal ; 
+    font-weight: 400 ;
+    left: 0 ;
+    max-height: 500px ;
+    max-width: 281px ;
+    margin-left: auto ;
+    margin-right: auto ;
+    position:  absolute ;
+    right: 0 ;
+    overflow: hidden ;
+    text-rendering: optimizeLegibility ;
+    top: 0 ;
+    
+    &.hummingtree-border {
+      border: 1px solid #dbdbe2 ;
+    }
+  }
+
+  /* ==== Slider ==== */
+  /* ================ */
+
+  #hummingtree .hummingtree-slider {
+    background-color: $offgrey ;
+    box-sizing: border-box ;
+    -webkit-box-sizing: border-box ;
+    -moz-box-sizing: border-box ;
+    -ms-box-sizing: border-box ;
+    left: 0 ;
+    right: 0 ;
+    height: 30% ; /*for IE*/
+    max-height: 30% ;
+    min-height: 30% ;
+    min-width: 100% ;
+    overflow-y: hidden ;
+    position: absolute ;
+    padding: 2% 6% 2.5% 6% ;
+    text-align: center ;
+    -webkit-transition: bottom 0.3s ease 0s ;
+    -o-transition: bottom 0.3s ease 0s ;
+    transition: bottom 0.3s ease 0s ;
+    -moz-transition: -moz-transform bottom .3s ease 0s ;
+    -ms-transition: -ms-transform bottom .3s ease 0s ;
+    width: 100% ;
+    z-index: auto ;
+    &.hummingtree-slider-default {
+      background-color: $purple ;
+      opacity: 1 ;
+      z-index: 5 ;
+    }
+    .hummingtree-slider-head {
+      height: 25% ;
+      position: relative ;
+      top: 0 ;
+
+      h3 {
+        @include vertical-align(absolute);
+        color: $offwhite ;
+        cursor: default;
+        display: inline-block ;
+        font-size: 1rem ;
+        left: 0 ;
+        margin: 0 0  ;
+        max-width: 85% ;
+        min-width: 85% ;
+        text-align: left ;
+      }
+      .hummingtree-toggle {
+        @include vertical-align(absolute);
+        height: 50% ;
+        max-height: 50% ;
+        min-height: 50% ; 
+        right: 0 ;
+
+      }
+      .hummingtree-caret {
+        height: 100% ;
+        max-height: 100% ;
+        max-width: 100% ;
+      }
+    }
+
+    .hummingtree-slider-body {
+      -webkit-box-sizing: border-box ;
+              box-sizing: border-box ;
+      height: 42% ;
+      left: 0 ;
+      min-height: 42% ;
+      min-width: 80% ;
+      width: 80% ;
+      position: relative ;
+      p {
+        @include vertical-align(absolute);
+        color: $offwhite ;
+        cursor: default;
+        font-size: 0.80rem ;
+        font-style: normal ;
+        font-weight: 400 ;
+        left: 0 ;
+        letter-spacing: 0.1px ;
+        line-height: 1.4 ;
+        margin: 0 ;
+        max-width: 100% ;
+        text-align: left ;
+      }
+    }
+    .hummingtree-slider-footer {
+      -webkit-box-sizing: border-box ;
+              box-sizing: border-box ;
+      bottom: 8% ;
+      height: 23% ;
+      left: 50% ;
+      position: absolute ;
+      -webkit-transform: translateX(-50%) ;
+          -ms-transform: translateX(-50%) ;
+              transform: translateX(-50%) ;
+      width: 90% ;
+
+      .hummingtree-footer-button {
+        @include vertical-align(absolute);
+        border: 1.3px solid $offwhite ;
+        border-radius: 3px ;
+        -webkit-box-sizing: border-box ;
+                box-sizing: border-box ;
+        display: inline-block ;
+        height: 85% ;
+        left: 0 ;
+        max-height: 85% ;
+        text-decoration: none ;
+        width: 45% ;
+      }
+      p {
+        @include vertical-align();
+        color: $offwhite ;
+        font-size: 0.8rem ;
+        left: 0 ;
+        letter-spacing: 0.2px ;
+        margin: 0 ;
+        text-align: center ;
+        width: 100% ;
+      }
+      .hummingtree-footer-link {
+        height: 100% ;
+        max-height: 100% ;
+        position: absolute ;
+        right: 0 ;
+      }
+      .hummingtree-footer-logo {
+        @include vertical-align(absolute);
+        bottom: 0 ;
+        height: 85% ;
+        max-height: 85% ;
+        right: 0 ;
+      }
+    }
+
+  }
+  // message window
+  $logo-height: 46.5%;
+  #hummingtree .hummingtree-message {
+    background-color: white ;
+    height: 100% ;
+    left: 0 ;
+    opacity: 100 ;
+    position: absolute ;
+    text-align: center ;
+    top: 0 ;
+    width: 100% ;
+    z-index: 4 ;
+
+    &.hummingtree-loaded {
+      -webkit-transition: opacity 0.4s linear, visibility 0.4s linear ;
+      -o-transition: opacity 0.4s linear, visibility 0.4s linear ;
+      transition: opacity 0.4s linear, visibility 0.4s linear ;
+      -moz-transition: -moz-transform  opacity 0.4s linear, visibility 0.4s linear ;
+      -ms-transition: -ms-transform opacity 0.4s linear, visibility 0.4s linear ;
+      opacity: 0 ;
+      visibility: hidden ;
+    }
+    // logo
+
+    .hummingtree-message-logo {
+      height: auto ; 
+      left: 50% ;
+      max-width: 21% ;
+      position: absolute ;
+      -webkit-transform: translate(-50%, -50%) ;
+          -ms-transform: translate(-50%, -50%) ;
+              transform: translate(-50%, -50%) ;
+      top: $logo-height ;
+      width: 21% ;            
+      z-index: 2 ;
+    }
+
+    $loading-hover: hover 1.3s alternate infinite cubic-bezier(.15,.09,.89,.95) ;
+    .hummingtree-logo-loading {
+      -webkit-animation: $loading-hover ;
+      animation: $loading-hover ;
+    }
+
+    .hummingtree-logo-error {
+      max-width: 24% ;
+      width: 24% ;
+    }
+
+    .hummingtree-logo-blocked {
+      max-width: 26% ;
+      width: 26% ;
+    }
+
+    .hummingtree-logo-default {
+      max-width: 42% ;
+      width: 42% ;
+    }
+    // shadow
+    .hummingtree-message-shadow {
+      background-color: #eeeef3 ;
+      position: absolute ;
+      left: 50% ;
+      -webkit-transform: translate(-50%, -50%) ;
+          -ms-transform: translate(-50%, -50%) ;
+              transform: translate(-50%, -50%) ;
+      top: $logo-height + 11% ;
+      height: 1.75% ;
+      width: 21%; 
+      border-radius: 100% ;
+      z-index: 1 ;
+    }
+
+    $loading-shrink: shrink 1.3s alternate infinite cubic-bezier(.15,.09,.89,.95) 0s;
+    .hummingtree-shadow-loading {
+      -webkit-animation: $loading-shrink; 
+      animation: $loading-shrink;
+    }
+
+    .hummingtree-shadow-error {
+      display: none ;
+    }
+
+    // title
+    .hummingtree-message-title {
+      height: auto;
+      left: 50% ;
+      max-width: 43% ;
+      position: absolute ;
+      top: 62% ;
+      -webkit-transform: translate(-50%, -50%) ;
+          -ms-transform: translate(-50%, -50%) ;
+              transform: translate(-50%, -50%) ;
+      width: 43% ;
+    }
+
+    .hummingtree-title-default {
+      display: none ;
+    }
+    // header
+    .hummingtree-message-header {
+      -webkit-box-sizing: border-box ;
+              box-sizing: border-box ;
+      color: $purple ;
+      font-family: $font-standard ;
+      font-weight: 600 ;
+      font-style: normal ;
+      left: 50% ;
+      letter-spacing: 1.1px ;
+      position: absolute ;
+      -webkit-transform: translate(-50%, -50%) ;
+          -ms-transform: translate(-50%, -50%) ;
+              transform: translate(-50%, -50%) ;
+      top: 10% ;
+    }
+
+    // text
+    .hummingtree-message-text {
+      -webkit-box-sizing: border-box ;
+              box-sizing: border-box ;
+      color: $purple ;
+      font-family: $font-standard ;
+      font-style: normal ;
+      font-weight: 400 ;
+      letter-spacing: 0.2px ;
+      padding: 0 10% ;
+      position: absolute ;
+      top: 15% ;
+    }
+    .hummingtree-text-blocked {
+      font-size: 0.85rem ;
+      line-height: 1.1rem ;
+    }
+    
+    // button
+    .hummingtree-message-button {
+      display: none ;
+    }
+    .hummingtree-button-active {
+      -webkit-box-sizing: border-box ;
+              box-sizing: border-box ;
+      background-color: $purple ;
+      border-radius: 35px ;
+      bottom: 8% ;
+      color: #ffffff ;  
+      cursor: pointer ;
+      display: inline-block ;
+      font-size: 0.9rem ;
+      height: 8.5% ;
+      left: 50% ;
+      letter-spacing: 0.2px ;
+      max-height: 8.5% ;
+      padding: 5% 0 ;
+      position: absolute ;
+      text-align: center ;
+      text-decoration: none ;
+      -webkit-transform: translate(-50%, -50%) ;
+          -ms-transform: translate(-50%, -50%) ;
+              transform: translate(-50%, -50%) ;
+      width: 65% ;
+    }
+  }
+  // animations
+  // loading tree
+  $hover-start: $logo-height;
+  $hover-finish: $logo-height + 2%;
+  @-webkit-keyframes hover {
+    0%   { top: $hover-start }
+    100% { top: $hover-finish }
+  }
+  @keyframes hover {
+    0%   { top: $hover-start }
+    100% { top: $hover-finish }
+  }
+  // loading shadow
+  $shrink-start: 21%;
+  $shrink-finish: 12%;
+  @-webkit-keyframes shrink {
+    0%   { width: $shrink-start; }
+    100% { width: $shrink-finish; }
+  }
+  @-moz-keyframes shrink {
+    0%   { width: $shrink-start; }
+    100% { width: $shrink-finish; }
+  }
+  @keyframes shrink {
+    0%   { width: $shrink-start; }
+    100% { width: $shrink-finish; }
+  }
+
+  .hummingtree-slider.hummingtree-slider-inactive {
+    bottom: -25% ;
+  }
+
+  .hummingtree-slider.hummingtree-slider-closed {
+    bottom: -21% ;
+  }
+
+  .hummingtree-slider.hummingtree-slider-open {
+    bottom: 0 ;
+  }
+
+  .hummingtree-caret.hummingtree-caret-open {
+    -webkit-transform: scaleY(-1) ;
+    -ms-transform: scaleY(-1) ;
+        transform: scaleY(-1) ;
+    -webkit-filter: FlipV ;
+            filter: FlipV ;
+    -ms-filter: "FlipV" ;
+  }
+
+}
+/* ==== Responsive Breakpoints  ==== */
+/* ================================= */
+
+/* ----------- iPhone 5 and 5S ----------- */
+
+/* Portrait and Landscape */
+// @media only screen 
+//   and (min-device-width: 320px) 
+//   and (max-device-width: 568px)
+//   and (-webkit-min-device-pixel-ratio: 2) {
+//     #hummingtree {
+//       top: 8%;
+//       height: 90%;
+//       width: 80%;
+//     }
+
+//     .hummingtree-modal {
+//       height: 100%;
+      
+//     }
+
+//     .hummingtree-slider h2 {
+//       padding-top: 0;
+//     }
+
+//     .hummingtree-slider a:link {
+//       text-decoration: none;
+//       margin-top: 10%;
+//     }
+// }
+
+// /* ----------- Phones ----------- */
+
+// /* Portrait and Landscape */
+// @media only screen 
+//   and (min-device-width: 375px) 
+//   and (max-device-width: 667px) 
+//   and (-webkit-min-device-pixel-ratio: 2) { 
+
+// }
+
+// /* ----------- Tablets ----------- */
+
+// /* Portrait and Landscape */
+// @media only screen 
+//   and (min-device-width: 768px) 
+//   and (max-device-width: 1024px) 
+//   and (-webkit-min-device-pixel-ratio: 1) {
+// }
